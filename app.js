@@ -12,7 +12,7 @@
       price: 2.95,
       description: "Dodecahedron is a very good thing!",
       canPurchase: true,
-      soldOut: true
+      soldOut: false
     },
     {
       name: "Dodecahedron2",
