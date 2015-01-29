@@ -6,6 +6,19 @@
     this.products = gems; 
   });
 
+  app.controller("PanelController", function(){
+
+    this.tab = 1;
+
+    this.setTab = function(tabToSet){
+      this.tab = tabToSet;
+    };
+
+    this.isTabSet = function(tabToCheck) {
+      return this.tab === tabToCheck;
+    }
+  });
+
   var gems = [
     {
       name: "Dodecahedron",
