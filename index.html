@@ -32,7 +32,24 @@
           </div>
           <div class="panel" ng-show="panel.isTabSet(3)">
             <h4> Reviews </h4>
-            <p> Not there yet </p>
+            <form name="reviewForm">
+              <blockquote>
+                <b>Stars: {{review.stars}}</b>
+                {{review.body}}
+                <cite>by: {{review.author}}</cite>
+              </blockquote>
+              <select ng-model="review.stars">
+                <option value="1">1 star</option>
+                <option value="2">2 star</option>
+                <option value="3">3 star</option>
+                <option value="4">4 star</option>
+                <option value="5">5 star</option>
+              </select>
+              <textarea ng-model="review.body"></textarea>
+              <label>by:</label>
+              <input type="email" ng-model="review.author" />
+              <input type="submit" value="Submit" />
+            </form>
           </div>
         </section>
       </li>
