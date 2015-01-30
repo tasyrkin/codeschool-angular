@@ -20,8 +20,12 @@
   });
 
   app.controller("ReviewController", function(){
-    this.review = {
-      stars: "5"
+
+    this.review = {};
+
+    this.addReview = function(product){
+      product.reviews.push(this.review);
+      this.review = {};
     };
   });
 
