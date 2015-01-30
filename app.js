@@ -19,13 +19,31 @@
     }
   });
 
+  app.controller("ReviewController", function(){
+    this.review = {
+      stars: "5"
+    };
+  });
+
   var gems = [
     {
       name: "Dodecahedron",
       price: 2.95,
       description: "Dodecahedron is a very good thing!",
       canPurchase: true,
-      soldOut: false
+      soldOut: false,
+      reviews : [
+        {
+          stars : "5",
+          body  : "This product is awesome",
+          author: "test@example.com"
+        },
+        {
+          stars : "3",
+          body  : "This product is good, but my friends did not like it",
+          author: "manyfriends@example.com"
+        }
+      ]
     },
     {
       name: "Dodecahedron2",
