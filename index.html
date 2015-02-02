@@ -45,7 +45,7 @@
               <li class="list-group-item" ng-repeat="review in product.reviews">
                 <b>{{review.stars}} Stars</b>
                 {{review.body}}
-                <cite>by: {{review.author}}</cite>
+                <cite>by: {{review.author}} on {{review.createdOn | date}}</cite>
               </li>
             </ul>
             <form name="reviewForm" ng-controller="ReviewController as reviewCtrl"
@@ -56,13 +56,8 @@
                 {{reviewCtrl.review.body}}
                 <cite>by: {{reviewCtrl.review.author}}</cite>
               </blockquote>
-              <select ng-model="reviewCtrl.review.stars" required>
-                <option value="" disabled selected>Select your option</option>
-                <option value="5">5 star</option>
-                <option value="4">4 star</option>
-                <option value="3">3 star</option>
-                <option value="2">2 star</option>
-                <option value="1">1 star</option>
+              <select ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]" required>
+               <option value>Select your option</option>
               </select>
               <textarea ng-model="reviewCtrl.review.body" required></textarea>
               <label>by:</label>
